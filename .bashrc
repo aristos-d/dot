@@ -29,6 +29,8 @@ export PS1="[\u@\h \W]\$ "
 export LC_TIME=C
 
 # User specific aliases and functions
+alias ls="ls --color"
+alias ll="ls -l"
 alias la="ls -a"
 
 # Cleanup
