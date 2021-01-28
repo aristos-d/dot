@@ -1,5 +1,6 @@
 FILES = .bashrc \
 		.vimrc \
+		.vim \
 		.tmux.conf
 
 dot.tar.xz: $(FILES)
@@ -8,7 +9,7 @@ dot.tar.xz: $(FILES)
 tarball: dot.tar.xz
 
 deploy: $(FILES)
-	cp $(FILES) ~
+	cp -r $(FILES) ~
 
 clean:
 	rm -f dot.tar.xz
