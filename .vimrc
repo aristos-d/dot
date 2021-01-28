@@ -60,3 +60,4 @@ set statusline+=\ %{&fileencoding?&fileencoding:&encoding}/%{&fileformat}
 set statusline+=\ %p%%
 set statusline+=\ 
 
+colorscheme onedark
