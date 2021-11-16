@@ -28,6 +28,9 @@ export PS1="[\u@\h \W]\$ "
 # Localization
 export LC_TIME=C
 
+# Default editor
+export EDITOR=/usr/bin/vim
+
 # User specific aliases and functions
 alias ls="ls --color"
 alias ll="ls -l"
