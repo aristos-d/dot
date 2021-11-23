@@ -47,6 +47,11 @@ let g:netrw_altv = 1
 let g:netrw_winsize = 20
 nmap <tab> :Lexplore<cr>:wincmd =<cr>
 
+" XML Formatter using Python 3
+if !exists(":FormatXML")
+    command FormatXML :%!python3 -c "import xml.dom.minidom, sys; print(xml.dom.minidom.parse(sys.stdin).toprettyxml())"
+endif
+
 " Status line helper functions
 function! GitBranch()
     return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
