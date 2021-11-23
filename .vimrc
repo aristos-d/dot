@@ -26,6 +26,18 @@ syntax enable
 " Automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
 
+" Tell vim about the escape sequences used by tmux
+if exists('$TMUX')
+    map <ESC>[1;5A <C-Up>
+    map <ESC>[1;5B <C-Down>
+    map <ESC>[1;5D <C-Left>
+    map <ESC>[1;5C <C-Right>
+    map! <ESC>[1;5A <C-Up>
+    map! <ESC>[1;5B <C-Down>
+    map! <ESC>[1;5D <C-Left>
+    map! <ESC>[1;5C <C-Right>
+endif
+
 " File explorer
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
