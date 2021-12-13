@@ -1,0 +1,46 @@
+#!/usr/bin/bash
+TARGET=$HOME/.local/share/java
+
+if [ $# -lt 1 ]
+then
+    echo Usage:
+    echo "    $0 <JAR file to be installed>"
+    exit 1
+fi
+
+if [ ! -f $1 ]
+then
+    echo JAR file not found. Abort!
+    exit 2
+fi
+
+# Create target directory if it does not exist.
+mkdir -p $TARGET
+
+# Check if a JAR with the same name already exists in the target directory.
+JAR_NAME=$(basename $1)
+if [ -f $TARGET/$JAR_NAME ]
+then
+    echo $JAR_NAME already exists in target directory. Abort!
+    exit 3
+fi
+
+# Check if a file that has the same name as the launch script already exists.
+SCRIPT_NAME=$HOME/bin/$(basename $1 .jar)
+if [ -f $SCRIPT_NAME ]
+then
+    echo $SCRIPT_NAME already exists. Abort!
+    exit 4
+fi
+
+# Copy JAR
+echo Installing $JAR_NAME in $TARGET
+cp $1 $TARGET/$JAR_NAME
+
+# Create launch script
+SCRIPT_CODE="#!/usr/bin/bash
+java -jar $TARGET/$JAR_NAME"
+echo "$SCRIPT_CODE" > $SCRIPT_NAME
+chmod +x $SCRIPT_NAME
+
+echo Done!
