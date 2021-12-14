@@ -39,7 +39,7 @@ cp $1 $TARGET/$JAR_NAME
 
 # Create launch script
 SCRIPT_CODE="#!/usr/bin/bash
-java -jar $TARGET/$JAR_NAME"
+java -jar $TARGET/$JAR_NAME \$@"
 echo "$SCRIPT_CODE" > $SCRIPT_NAME
 chmod +x $SCRIPT_NAME
 
