@@ -13,6 +13,7 @@ dot.tar.xz: $(FILES_HOME) $(FILES_BIN)
 tarball: dot.tar.xz
 
 deploy: $(FILES)
+	mkdir -p $(HOME)/bin
 	cp -r -t $(HOME) $(FILES_HOME)
 	cp -r -t $(HOME)/bin $(FILES_BIN)
 
