@@ -26,6 +26,10 @@ syntax enable
 " Automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
 
+" Set fuzzy file finding
+set path+=**
+set wildmenu
+
 " Tell vim about the escape sequences used by tmux
 if exists('$TMUX')
     map <ESC>[1;5A <C-Up>
