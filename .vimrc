@@ -47,6 +47,10 @@ let g:netrw_altv = 1
 let g:netrw_winsize = 20
 nmap <tab> :Lexplore<cr>:wincmd =<cr>
 
+if !exists(":FormatC")
+    command FormatC :%!clang-format
+endif
+
 " XML Formatter using Python 3
 if !exists(":FormatXML")
     command FormatXML :%!python3 -c "import xml.dom.minidom, sys; print(xml.dom.minidom.parse(sys.stdin).toprettyxml())"
