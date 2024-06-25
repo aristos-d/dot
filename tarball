@@ -1,0 +1,11 @@
+#!/usr/bin/sh
+
+FILES_HOME="    \
+    .bashrc     \
+    .vimrc      \
+	.vim        \
+	.tmux.conf"
+
+FILES_BIN=bin/install-jar
+
+tar cJf dot.tar.xz $FILES_HOME $FILES_BIN
