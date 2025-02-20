@@ -1,13 +1,9 @@
 #!/usr/bin/sh
 
-FILES_HOME="    \
+FILES="         \
     .bashrc     \
     .vimrc      \
 	.vim        \
 	.tmux.conf"
-
-FILES_BIN=bin/install-jar
 	
-mkdir -p $HOME/bin
-cp -r -v -t $HOME $FILES_HOME
-cp -r -v -t $HOME/bin $FILES_BIN
+cp -r -v -t $HOME $FILES
